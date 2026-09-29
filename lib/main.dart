@@ -71,6 +71,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
+  void decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -118,10 +130,27 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: 'dec',
+            onPressed: decrementCounter,
+            child: const Icon(Icons.remove),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            heroTag: 'reset',
+            onPressed: resetCounter,
+            child: const Icon(Icons.refresh),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            heroTag: 'inc',
+            onPressed: _incrementCounter,
+            child: const Icon(Icons.add),
+          ),
+        ],
       ),
     );
   }
