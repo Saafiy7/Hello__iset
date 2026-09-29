@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+// depart de l'app
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); //demarer l'application
 }
 
 class MyApp extends StatelessWidget {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // configuration design de l'application
     return MaterialApp(
       title: 'Hello iset',
       theme: ThemeData(
@@ -57,6 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    //communique avec flutter
+    //dire a flutter que l'app est changee
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -75,6 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    //squelette de l'application
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
@@ -120,3 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+//lib : contient le code dart
+//android : partie de l'application qui est pour android
+//web : partie qui peux lancer l'app
+//pubspec.yaml : contient les dependences, versions ..
